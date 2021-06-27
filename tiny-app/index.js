@@ -5,15 +5,11 @@ import { MyProvider } from "./src/context";
 
 import App from "./App";
 
-const provider = () ==> {
-
-    <MyProvider>
-        <App></App>
-    </MyProvider>
-
-}
-
-
+const provider = () => (
+  <MyProvider>
+    <App></App>
+  </MyProvider>
+);
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in Expo Go or in a native build,
