@@ -17,7 +17,9 @@ const StageOne = () => {
           .max(15, "Less than 15 characters are allowed")
           .required("Sorry the name is required"),
       })}
-      onSubmit={(values, { resetForm }) => {}}
+      onSubmit={(values, { resetForm }) => {
+        alert(values);
+      }}
     >
       {({
         handleChange,
@@ -29,7 +31,7 @@ const StageOne = () => {
       }) => (
         <>
           <Text>Tinny App</Text>
-          //input line of the interface
+          {/* //input line of the interface */}
           <Input
             placeholder="Name"
             leftIcon={{ type: "antdesign", name: "adduser" }}
@@ -40,6 +42,13 @@ const StageOne = () => {
             onChangeText={handleChange("player")}
             onBlur={handleBlur("player")}
             value={values.player}
+          />
+
+          {/* Button of the page */}
+          <Button
+            // buttonStyle={}
+            title="Add Player"
+            onPress={handleSubmit}
           />
         </>
       )}
