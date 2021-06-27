@@ -3,8 +3,10 @@ import { StyleSheet, Text, View } from "react-native";
 
 const StageOne = () => {
   return (
-    <view style={styles.container}>
+    <view>
       <Text>Stage One Opened</Text>
     </view>
   );
 };
+
+export default StageOne;
