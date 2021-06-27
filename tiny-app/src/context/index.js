@@ -23,3 +23,5 @@ class MyProvider extends Component {
     );
   }
 }
+
+export { MyProvider, MyContext };
