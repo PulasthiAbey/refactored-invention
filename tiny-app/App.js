@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import { MyContext } from "./src/context";
+import StageOne from "./src/component/stage_one";
+import StageTwo from "./src/component/stage_two";
 
 class App extends Component {
   static contextType = MyContext;
@@ -8,7 +10,7 @@ class App extends Component {
     return (
       <ScrollView>
         <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
+          {this.context.state.stage === 1 ? <StageOne /> : <StageTwo />}
         </View>
       </ScrollView>
     );
@@ -21,6 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    marginTop: 80,
   },
 });
 
