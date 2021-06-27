@@ -9,9 +9,41 @@ import { MyContext } from "../context";
 const StageOne = () => {
   const context = useContext(MyContext);
   return (
-    <view>
-      <Text>Stage One Opened</Text>
-    </view>
+    <Formik
+      initialValue={{ player: "" }}
+      validationSchema={Yup.object({
+        player: Yup.string()
+          .min(3, "Must be more than 3 characters")
+          .max(15, "Less than 15 characters are allowed")
+          .required("Sorry the name is required"),
+      })}
+      onSubmit={(values, { resetForm }) => {}}
+    >
+      {({
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        values,
+        touched,
+        errors,
+      }) => (
+        <>
+          <Text>Tinny App</Text>
+          //input line of the interface
+          <Input
+            placeholder="Name"
+            leftIcon={{ type: "antdesign", name: "adduser" }}
+            inputContainerStyle={{
+              marginHorizontal: 50,
+              marginTop: 50,
+            }}
+            onChangeText={handleChange("player")}
+            onBlur={handleBlur("player")}
+            value={values.player}
+          />
+        </>
+      )}
+    </Formik>
   );
 };
 
