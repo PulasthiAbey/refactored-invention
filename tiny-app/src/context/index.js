@@ -9,12 +9,21 @@ class MyProvider extends Component {
     result: "",
   };
 
+  // Creating a new function to run the cases inb the adding new player
+
+  addPlayerHandler = (name) => {
+    this.setState((prevState, props) => ({
+      players: [...prevState.players, players, name],
+    }));
+  };
+
   render() {
     return (
       <>
         <MyContext.Provider
           value={{
             state: this.state,
+            addPlayer: this.addPlayerHandler,
           }}
         >
           {this.props.children}

@@ -18,7 +18,8 @@ const StageOne = () => {
           .required("Sorry the name is required"),
       })}
       onSubmit={(values, { resetForm }) => {
-        alert(values);
+        context.addPlayer(values.player);
+        resetForm();
       }}
     >
       {({
@@ -53,7 +54,7 @@ const StageOne = () => {
           }}
           {/* Button of the page */}
           <Button
-            // buttonStyle={}
+            buttonStyle={styles.button}
             title="Add Player"
             onPress={handleSubmit}
           />
@@ -62,5 +63,12 @@ const StageOne = () => {
     </Formik>
   );
 };
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "DB3E01",
+    marginTop: 20,
+  },
+});
 
 export default StageOne;
