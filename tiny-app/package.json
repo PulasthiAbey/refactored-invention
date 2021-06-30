@@ -7,6 +7,7 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.1.77",
     "expo": "^1.0.0",
     "expo-splash-screen": "~0.10.2",
     "expo-status-bar": "~1.0.4",
