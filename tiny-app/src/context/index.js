@@ -24,6 +24,19 @@ class MyProvider extends Component {
     this.setState({ players: newArray });
   };
 
+  // going to the nt stage after checkiong the values in the function
+  nextHandler = () => {
+    const { player } = this.state;
+
+    if (player.length < 2) {
+      alert("You need at least 2 Players");
+    } else {
+      this.setState({
+        stage: 2,
+      });
+    }
+  };
+
   render() {
     return (
       <>
@@ -32,6 +45,7 @@ class MyProvider extends Component {
             state: this.state,
             addPlayer: this.addPlayerHandler,
             removePlayer: this.removePlayerHandler,
+            next: this.nextHandler,
           }}
         >
           {this.props.children}

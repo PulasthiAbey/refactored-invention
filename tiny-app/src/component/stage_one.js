@@ -87,6 +87,11 @@ const StageOne = () => {
           <>
             <Text>List of Players</Text>
             {renderPlayers()}
+            <Button
+              buttonStyle={styles.button}
+              title="Get the Looser"
+              onPress={() => context.next()}
+            />
           </>
         ) : null}
       </View>
