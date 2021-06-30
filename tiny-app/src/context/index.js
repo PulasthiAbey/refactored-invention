@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Toast from "react-native-toast-message";
 
 const MyContext = React.createContext();
 
@@ -26,10 +27,15 @@ class MyProvider extends Component {
 
   // going to the nt stage after checkiong the values in the function
   nextHandler = () => {
-    const { player } = this.state;
+    const { players } = this.state;
 
-    if (player.length < 2) {
-      alert("You need at least 2 Players");
+    if (players.length < 2) {
+      Toast.show({
+        type: "error",
+        position: "bottom",
+        text1: "Sorry",
+        text2: "You need At least two Players",
+      });
     } else {
       this.setState({
         stage: 2,

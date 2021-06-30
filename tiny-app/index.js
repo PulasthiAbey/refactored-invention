@@ -2,12 +2,14 @@ import "react-native-gesture-handler";
 import { registerRootComponent } from "expo";
 import React from "react";
 import { MyProvider } from "./src/context";
+import Toast from "react-native-toast-message";
 
 import App from "./App";
 
 const provider = () => (
   <MyProvider>
     <App></App>
+    <Toast ref={(ref) => Toast.setRef(ref)} />
   </MyProvider>
 );
 
