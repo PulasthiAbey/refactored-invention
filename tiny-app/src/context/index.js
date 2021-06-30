@@ -17,6 +17,13 @@ class MyProvider extends Component {
     }));
   };
 
+  // creating the function to remove the players
+  removePlayerHandler = (idx) => {
+    let newArray = this.state.players;
+    newArray.splice(idx, 1);
+    this.setState({ players: newArray });
+  };
+
   render() {
     return (
       <>
@@ -24,6 +31,7 @@ class MyProvider extends Component {
           value={{
             state: this.state,
             addPlayer: this.addPlayerHandler,
+            removePlayer: this.removePlayerHandler,
           }}
         >
           {this.props.children}
