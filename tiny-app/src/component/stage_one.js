@@ -43,7 +43,14 @@ const StageOne = () => {
             onBlur={handleBlur("player")}
             value={values.player}
           />
-
+          {/* Error Messages */}
+          renderErrorMessage={errors.player && touched.player}
+          errorMessage={errors.player}
+          errorStyle=
+          {{
+            marginHorizontal: 50,
+            marginTop: 5,
+          }}
           {/* Button of the page */}
           <Button
             // buttonStyle={}

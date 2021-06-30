@@ -22,6 +22,7 @@
     "react-native-unimodules": "~0.13.3",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "^0.17.1",
+    "start": "^5.1.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
