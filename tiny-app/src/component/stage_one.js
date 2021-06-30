@@ -61,8 +61,19 @@ const StageOne = () => {
         </>
       )}
     </Formik>
-  );
-};
+    // Viewing the intems in the player list
+    <View style={{padding:20, width:'100%'}}>
+      {
+        context.state.players && context.state.players.length >0 ?
+        <>
+          <Text>List of Players</Text>
+        </>
+
+        :null
+      }
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   button: {
