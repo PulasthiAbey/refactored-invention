@@ -10,5 +10,7 @@ export const MainLogo = () => {
       textDecorationColor: "#41b6e6",
       fontSize: 30,
     }}
-  ></Text>;
+  >
+    Who Pays The Bill ?
+  </Text>;
 };

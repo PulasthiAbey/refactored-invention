@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import { Input, Button, ListItem, Text } from "react-native-elements";
 
 import { MyContext } from "../context";
+import { MainLogo } from "../utils/tools";
 
 const StageOne = () => {
   const context = useContext(MyContext);
@@ -51,14 +52,7 @@ const StageOne = () => {
           errors,
         }) => (
           <>
-            <Text
-              style={{
-                fontFamily: "Pacifico-Regular",
-                fontsize: 30,
-              }}
-            >
-              Who Pays The Bill
-            </Text>
+            <MainLogo />
             {/* //input line of the interface */}
             <Input
               placeholder="Name"
