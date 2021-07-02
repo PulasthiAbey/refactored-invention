@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: Platform.OS === "ios" ? 80 : 30,
+    marginTop: Platform.OS === "ios" ? 80 : 20,
   },
 });
 
