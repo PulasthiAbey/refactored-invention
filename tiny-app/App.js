@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Platform } from "react-native";
 import { MyContext } from "./src/context";
 import StageOne from "./src/component/stage_one";
 import StageTwo from "./src/component/stage_two";
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 80,
+    marginTop: Platform.OS === "ios" ? 80 : 30,
   },
 });
 
