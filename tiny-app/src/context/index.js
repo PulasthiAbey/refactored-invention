@@ -37,10 +37,22 @@ class MyProvider extends Component {
         text2: "You need At least two Players",
       });
     } else {
-      this.setState({
-        stage: 2,
-      });
+      this.setState(
+        {
+          stage: 2,
+        },
+        () => {
+          this.generateLooser();
+        }
+      );
     }
+  };
+
+  generateLooser = () => {
+    const { players } = this.state;
+    this.setState({
+      result: players[Math.floor(Math.random() * players.length)],
+    });
   };
 
   render() {
