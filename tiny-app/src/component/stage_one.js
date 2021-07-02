@@ -51,7 +51,14 @@ const StageOne = () => {
           errors,
         }) => (
           <>
-            <Text>Tinny App</Text>
+            <Text
+              style={{
+                fontFamily: "Pacifico-Regular",
+                fontsize: 30,
+              }}
+            >
+              Who Pays The Bill
+            </Text>
             {/* //input line of the interface */}
             <Input
               placeholder="Name"
