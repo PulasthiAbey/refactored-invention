@@ -47,11 +47,20 @@ class MyProvider extends Component {
       );
     }
   };
-
+  //generating the lo9oserr ion the applkication
   generateLooser = () => {
     const { players } = this.state;
     this.setState({
       result: players[Math.floor(Math.random() * players.length)],
+    });
+  };
+
+  //reset game
+  resetGame = () => {
+    this.setState({
+      stage: 1,
+      players: [],
+      result: "",
     });
   };
 
@@ -64,6 +73,8 @@ class MyProvider extends Component {
             addPlayer: this.addPlayerHandler,
             removePlayer: this.removePlayerHandler,
             next: this.nextHandler,
+            getNewLooser: this.generateLooser,
+            resetGame: this.resetGame,
           }}
         >
           {this.props.children}

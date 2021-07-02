@@ -20,9 +20,9 @@ const StageTwo = () => {
       <Button
         buttonStyle={style.button}
         title="Try Again"
-        onPress={() => alert("Try Again")}
+        onPress={() => context.getNewLooser()}
       />
-      <Button title="Start Over" onPress={() => alert("Try Again")} />
+      <Button title="Start Over" onPress={() => context.resetGame()} />
     </view>
   );
 };
