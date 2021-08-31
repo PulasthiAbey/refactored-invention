@@ -1,13 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
 
 const Counter = () => {
+  const [counter, setCounter] = useState(0);
+
+  const additionHandler = () => {
+    setCounter(counter + 1);
+  };
+
+  const subtractionHandler = () => {
+    setCounter(counter - 1);
+  };
+
   return (
     <View style={styles.outerContainer}>
-      <Text>0</Text>
+      <Text>{counter}</Text>
       <View style={styles.rowContainer}>
-        <Button style={styles.buttonStyle}>ADD</Button>
-        <Button style={styles.buttonStyle}>SUBTRACT</Button>
+        <Button
+          style={styles.buttonStyle}
+          title="Add"
+          onPress={() => additionHandler()}
+        />
+        <Button
+          style={styles.buttonStyle}
+          title="Subtract"
+          onPress={() => subtractionHandler()}
+        />
       </View>
     </View>
   );
@@ -15,7 +33,7 @@ const Counter = () => {
 
 const styles = StyleSheet.create({
   outerContainer: {
-    padding: 10,
+    padding: 20,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
@@ -24,9 +42,9 @@ const styles = StyleSheet.create({
   rowContainer: {
     marginTop: 20,
     padding: 10,
-    flexdirection: "row",
+    flexDirection: "row",
     flex: 1,
-    flexDirection: "space-between",
+    justifyContent: "space-between",
   },
 
   buttonStyle: {
