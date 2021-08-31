@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import { addition, subtraction } from "./store/actions";
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
-
-  const additionHandler = () => {
-    setCounter(counter + 1);
-  };
-
-  const subtractionHandler = () => {
-    setCounter(counter - 1);
-  };
+const Counter = (props) => {
+  const data = useSelector((state) => state);
+  const { counter } = data;
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.outerContainer}>
@@ -19,12 +15,12 @@ const Counter = () => {
         <Button
           style={styles.buttonStyle}
           title="Add"
-          onPress={() => additionHandler()}
+          onPress={() => dispatch(addition())}
         />
         <Button
           style={styles.buttonStyle}
           title="Subtract"
-          onPress={() => subtractionHandler()}
+          onPress={() => dispatch(subtraction())}
         />
       </View>
     </View>
