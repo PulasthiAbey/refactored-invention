@@ -6,12 +6,8 @@ const Counter = () => {
     <View style={styles.outerContainer}>
       <Text>0</Text>
       <View style={styles.rowContainer}>
-        <View style={styles.columnContainer}>
-          <Button>ADD</Button>
-        </View>
-        <View>
-          <Button>SUBTRACT</Button>
-        </View>
+        <Button style={styles.buttonStyle}>ADD</Button>
+        <Button style={styles.buttonStyle}>SUBTRACT</Button>
       </View>
     </View>
   );
@@ -30,12 +26,11 @@ const styles = StyleSheet.create({
     padding: 10,
     flexdirection: "row",
     flex: 1,
+    flexDirection: "space-between",
   },
 
-  columnedContainer: {
-    flex: 1,
-    flexdirection: "column",
-    padding: 10,
+  buttonStyle: {
+    fontWeight: "bold",
   },
 });
 
